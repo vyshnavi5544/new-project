@@ -1,352 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Your Name</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      font-family: 'Poppins', sans-serif;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    header {
-      background: linear-gradient(135deg, peachpuff, #a29bfe);
-      color: whitesmoke;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    nav {
-      background: black;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: peachpuff;
-      margin: 0 1.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Poppins', sans-serif;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      background: url('your-picture.jpg') no-repeat center center/cover;
-      height: 70vh;
-      color: lightpink;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .hero h1 {
-      font-size: 4rem;
-      font-family: 'Poppins', sans-serif;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 0.15em solid goldenrod;
-      animation: typing 6s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
-    }
-    @keyframes typing {
-      0% { width: 0; }
-      50% { width: 100%; }
-      100% { width: 0; }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: goldenrod; }
-    }
-    section {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    body {
-      background-color:  lightsteelblue;
-      color: black;
-      line-height: 1.6;
-      font-family: 'Open Sans', sans-serif;
-    }
-    img.project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    img.about-image {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 10px;
-    }
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contact-form input, .contact-form textarea {
-      padding: 0.75rem;
-      border: 1px solid #def384;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    .contact-form button {
-      padding: 0.75rem;
-      background: whitesmoke;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .skills-grid, .projects-grid, .testimonials-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-    .skill-card, .project-card, .testimonial-card {
-      background: white;
-      border: 2px solid transparent;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: calc(33% - 1rem);
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .skill-card::before, .project-card::before, .testimonial-card::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(135deg, peachpuff peachpuff);
-      z-index: -1;
-      border-radius: 15px;
-    }
-    .skill-card:hover, .project-card:hover, .testimonial-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .skill-card h3, .project-card h3, .testimonial-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #6c5ce7;
-      font-family: 'Poppins', sans-serif;
-    }
-    .contact-form button:hover {
-      background: #5a4dbf;
-    }
-    footer {
-      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-      color: peachpuff;
-      text-align: center;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    footer {
-      background: linear-gradient(135deg, peachpuff, #a29bfe);
-      color: white;
-      text-align: center;
-    }
-    header {
-      background: linear-gradient(135deg, peachpuff, #a29bfe);
-      color: #fff;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      font-family: 'Poppins', sans-serif;
-    }
-    nav {
-      background: grey;
-      padding: 1rem;
-      text-align: center;
-    }
-    #about {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnessFusion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: grey;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        /* Rating Container */
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
 }
 
-.view-button {
-  background-color: blue;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Stars */
+.star {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.view-button:hover {
-  background-color: blue;
+.star:hover,
+.star.active {
+    color: gold;
+}
+
+        .box {
+            width: 300px;
+            border: 2px solid #ff5733;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .box img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .box h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .box p {
+            font-size: 14px;
+            color: #666;
+        }
+        .view-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #ff5733;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .view-btn:hover {
+            background-color: #e64c29;
+        }
+
+        /* Typing Effect */
+        .typing-text {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #333;
+    animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    
+    /* Updated styles */
+    text-shadow: 4px 4px 10px rgba(255, 87, 51, 0.8);
 }
 
 
-#contact {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
-    nav a {
-      color: #fff;
-      margin: 0 1.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Poppins', sans-serif;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: linear-gradient(135deg, #f6f6ff, #efedff);
-      padding: 3rem 5%;
-      height: 70vh;
-    }
-    .hero-text {
-      max-width: 50%;
-    }
-    .hero-text h1 {
-      font-size: 3.5rem;
-      color: #6c5ce7;
-      font-family: 'Poppins', sans-serif;
-      margin-bottom: 1rem;
-    }
-    .hero-text p {
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-    .hero img {
-      max-width: 45%;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Vyshnavi</h1>
-    <p>Web Developer | Designer | Cloud Enthusiast</p>
-  </header>
+    <h1 class="typing-text">Welcome to FitnessFusion</h1>
+    <div class="container">
+        <div class="box">
+            <img src="https://img.freepik.com/premium-photo/motivational-cardio-photos-gym-home-workouts_1199394-241618.jpg" alt="Workout">
+            <h3>Cardio Training</h3>
+            <p>"Cardio time! Let's sweat 💦🏋‍♀"</p>
+            
+            <a href="https://www.youtube.com/watch?v=ufhM_9eLU-s" class="view-btn" target="_blank">Watch Video</a>
 
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-  </nav>
+        </div>
+        <div class="box">
+            <img src="https://img.freepik.com/premium-photo/personal-training-workout-sessions_1199394-22188.jpg" alt="Workout">
+            <h3>Strength Training</h3>
+            <p>"Get strong, feel empowered! 💪🏼💃"</p>
+            
+            <a href="https://www.youtube.com/watch?v=H1F-UfC8Mb8" class="view-btn" target="_blank">Watch Video</a>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>NAMASTHEEE!!!</h1>
-      <p>This is N.Vyshnavi...</p>
-      <p>WELCOME TO MY PORTFOLIO</p>
+        </div>
+        <div class="box">
+            <img src="https://thumb.photo-ac.com/6f/6f88e586c52081d390b47f7668d25d5b_t.jpeg" alt="Workout">
+            <h3>Yoga Sessions</h3>
+            <p>"Yoga: where strength meets flexibility! 🧘‍♂💪"</p>
+            
+            <a href="https://www.youtube.com/watch?v=yPK7ISPEu3M" class="view-btn" target="_blank">Watch Video</a>
+        </div>
+        <div class="box">
+            <img src="https://thumbs.dreamstime.com/b/fitness-woman-doing-lunges-exercises-leg-muscle-workout-gym-active-girl-front-forward-one-step-lunge-137186173.jpg" alt="Workout">
+            <h3>SQUATS WORKOUT</h3>
+            <p>"Strong legs, strong life! 🏋‍♀💪"  </p>
+            
+            <a href="https://www.youtube.com/watch?v=xqvCmoLULNY" class="view-btn" target="_blank">Watch Video</a>
+
+        </div>
+        <div class="box">
+            <img src="https://img.freepik.com/premium-photo/fit-woman-doing-bicep-curls-with-barbell-gym_885831-162938.jpg" alt="Workout">
+            <h3>BICEPS CURL</h3>
+            <p>"Pump up those biceps! 💪🏋‍♀"            </p>
+            
+            <a href="https://www.youtube.com/watch?v=2JOXXpD4HcY" class="view-btn" target="_blank">Watch Video</a>
+
+
+        </div>
+        <div class="box">
+            <img src="https://img.freepik.com/premium-photo/group-young-people-doing-lunges-gym_875825-40521.jpg" alt="Workout">
+            <h3>LUNGES</h3>
+            <p>"Lunge into fitness! 🏋‍♀💪" </p>
+            
+            <a href="https://youtu.be/MxfTNXSFiYI?si=9aWlKK9KbwzZU5pZ" class="view-btn" target="_blank">Watch Video</a>
+
+
+        </div>
+        <div class="box">
+            <img src="https://media.istockphoto.com/id/1445019195/photo/jumping-jack-fitness-and-women-training-cardio-happy-with-workout-and-smile-during-exercise.jpg?s=612x612&w=0&k=20&c=OfZeg5vBkCpU36xoL69vRQSg1em2hXMnRy_JPG12blc=" alt="Workout">
+            <h3>Jumping Jacks</h3>
+            <p> "Jumping into fitness! 🏋‍♂💥"            </p>
+            
+            <a href="https://youtu.be/iSSAk4XCsRA?si=hYCB8rj3C9eyV5Sp" class="view-btn" target="_blank">Watch Video</a>
+        </div>
+        <div class="box">
+            <img src="https://t3.ftcdn.net/jpg/03/94/33/94/360_F_394339404_tC1k4kOWEJmPBMfF06uUPBHJlgpEQZKA.jpg" alt="Workout">
+            <h3>DEAD LIFTS</h3>
+            <p> "Deadlifts: where strength meets power! 💪🔥"            </p>
+            
+            <a href="https://youtu.be/7j-2w4-P14I?si=6rbEDlV_nAKZPU3R" class="view-btn" target="_blank">Watch Video</a>
+        </div>
     </div>
-    <img src="c:\Users\vaish\Downloads\A_laptop_or_computer_on_a_modern_desk_setup,_activ.jpg" alt="Computer Illustration">
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    
-    <div class="about-content">
-      <img src="c:\Users\vaish\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\2F9A86313DBAAAA5E9C04D480DF2AC41\WhatsApp Image 2025-02-09 at 14.10.06_cd47d5ef.jpg" alt="Your Picture" class="about-image">
-      <p>I am a passionate web developer with a focus on creating clean, efficient, and user-friendly websites. I specialize in modern web technologies, cloud computing solutions, and UI/UX design. With a strong eye for detail and a love for problem-solving, I strive to deliver high-quality solutions that meet client needs.</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>HTML & CSS</h3>
-        <p>Proficient in creating responsive and visually appealing web pages.</p>
-      </div>
-      <div class="skill-card">
-        <h3>JavaScript</h3>
-        <p>Experienced in building interactive and dynamic web applications.</p>
-      </div>
-      <div class="skill-card">
-        <h3>Cloud Computing</h3>
-        <p>Skilled in deploying and managing applications on cloud platforms.</p>
-    </div>
-</div>
-</section>
-
-<section id="projects">
-<h2>Projects</h2>
-<div class="projects-grid">
-  <div class="project-card">
-    <img src="C:\Users\vaish\Downloads\A_vibrant_and_visually_appealing_online_food_store (1).jpg" alt="Project Image" class="project-image">
-    <h3>ONLINE STORE</h3>
-    <p>🍔🍕🥤🛍 "Bite into the best, delivered right to your door!" 🍴👌</p>
-    <button class="view-button">View</button>
-    
-
-  </div>
-  <div class="project-card">
-    <img src="https://files.oaiusercontent.com/file-JLqTPDjzoLpPynqdMe5VPK?se=2025-02-09T10%3A36%3A56Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D17d3eb68-89c2-4f52-8680-cf6612bcc4d4.webp&sig=ai1xElEVULFBdQXY5bLNCVXrrlC2CzDhD3qDjDE1zg0%3D" alt="Project Image" class="project-image">
-    <h3>ANIMAL PARK</h3>
-    <p>🦁🌳 "Roar into the wild at our Animal Park! 🎟 Meet majestic creatures, go on safari adventures 🚀, and connect with nature 🌿. A wild experience awaits! 🦒👀"</p>
-    <button class="view-button">View</button>
-
-    </p>
-  </div>
-  <div class="project-card">
-    <img src="https://files.oaiusercontent.com/file-VfXMXu2tE4tiDyzcFXVC8T?se=2025-02-09T10%3A58%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Def700a58-23c4-4246-8484-213beccd2431.webp&sig=UcURK2HEtxolPTUQkddqqhPn3pcp/r8LC58BSGaa5xE%3D" alt="Project Image" class="project-image">
-    <h3>SPORTS</h3>
-    <p>🏆🔥 "Get ready to score big at our Sports Zone! 🏀🏈🏊‍♀ From thrilling matches to action-packed games, experience the rush of competition and camaraderie! 💪👏"</p>
-    <button class="view-button">View</button>
-
-  </div>
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Feel free to reach out to me for any inquiries or collaborations.</p>
-<form class="contact-form">
-  <input type="text" placeholder="Your Name" required>
-  <input type="email" placeholder="Your Email" required>
-  <textarea placeholder="Your Message" rows="5" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
-</section>
-
-<footer>
-<p>&copy; 2025 Your Name. All Rights Reserved.</p>
-</footer>
 </body>
 </html>
